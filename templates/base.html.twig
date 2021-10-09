@@ -28,12 +28,12 @@
     </head>
     <body>
         {% include "Components/preload.html.twig" %}
-        {% include "Components/mobilenav.html.twig" %}
-        {% include "Components/header.html.twig" %}
+        {% include "Components/Layout/mobilenav.html.twig" %}
+        {% include "Components/Layout/header.html.twig" %}
         <div class="container">  
         {% block body %}{% endblock %}
         </div>
-
+        {% include "Components/Layout/footer.html.twig" %}
 
         <!-- Js Plugins -->
     <script src="{{ asset('js/jquery-3.3.1.min.js')}}"></script>
