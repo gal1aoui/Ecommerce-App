@@ -3,10 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+
+            <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
+                <!-- Css Styles -->
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}" type="text/css">
+            <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}" type="text/css">
+            <link rel="stylesheet" href="{{ asset('css/elegant-icons.css')}}" type="text/css">
+            <link rel="stylesheet" href="{{ asset('css/nice-select.css')}}" type="text/css">
+            <link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css')}}" type="text/css">
+            <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css')}}" type="text/css">
+            <link rel="stylesheet" href="{{ asset('css/slicknav.min.css')}}" type="text/css">
+            <link rel="stylesheet" href="{{ asset('css/style.css')}}" type="text/css">
         {% endblock %}
 
         {% block javascripts %}
@@ -14,6 +27,22 @@
         {% endblock %}
     </head>
     <body>
+        {% include "Components/preload.html.twig" %}
+        {% include "Components/mobilenav.html.twig" %}
+        {% include "Components/header.html.twig" %}
+        <div class="container">  
         {% block body %}{% endblock %}
+        </div>
+
+
+        <!-- Js Plugins -->
+    <script src="{{ asset('js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('js/jquery.nice-select.min.js')}}"></script>
+    <script src="{{ asset('js/jquery-ui.min.js')}}"></script>
+    <script src="{{ asset('js/jquery.slicknav.js')}}"></script>
+    <script src="{{ asset('js/mixitup.min.js')}}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('js/main.js')}}"></script>
     </body>
 </html>

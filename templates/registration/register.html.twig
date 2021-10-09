@@ -7,15 +7,22 @@
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
-    <h1>Register</h1>
+    <h3 class="h3 mb-3 font-weight-normal">Register</h3>
 
     {{ form_start(registrationForm) }}
+    <div class="checkout__input">
         {{ form_row(registrationForm.email) }}
+    </div>
+    <div class="checkout__input">
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+    </div>
+    <div class="checkout__input__checkbox">
+        {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'mr-2'}})}}
+        {{ form_label(registrationForm.agreeTerms, 'I have read the Terms&Conditions')}}
+    </div>
 
-        <button type="submit" class="btn">Register</button>
+        <button type="submit" class="site-btn">Register</button>
     {{ form_end(registrationForm) }}
 {% endblock %}
